@@ -1,6 +1,7 @@
 <template>
+  <div v-if="!showBlock" @click="harami" class="block2">Don't Click</div>
   <div class="block" v-if="showBlock" @click="stopTimer">
-      Click me
+    Click me
   </div>
 </template>
 
@@ -30,6 +31,9 @@ export default {
       clearInterval(this.timer)
       this.showBlock = false
       this.$emit('stop', this.reaction)
+    },
+    harami(){
+     alert("Don't click until pink box shows")
     }
   },
 }
@@ -44,5 +48,13 @@ margin: 40px, auto;
 padding: 100px 20px;
 border-radius: 10px;
 color: white;
+}   
+.block2{
+display: inline-block;
+width: 300px;
+background-color: white;
+margin: 40px, auto;
+padding: 100px 20px;
+border-radius: 10px;
 }   
 </style>
