@@ -1,7 +1,7 @@
 <template>
   <div>
       <h1>Reaction timer</h1>
-      <button @click="start" :disabled="isplaying">Play</button>
+      <button @click="start" :disabled="isplaying" class="btn">Play</button>
   </div><br>
   <Block v-if="isplaying" :delay="delay" @stop="stopGame" />
   <p v-if="!isplaying">A popup box will show down below just click it as fast as you can</p>
@@ -18,7 +18,7 @@ export default{
           delay : null,
           score: null,
           showResult : false,
-          Regard: "Keep it up"
+          Regard: "Keep it up",
       }
   },
   components: {Block},
@@ -55,11 +55,11 @@ export default{
   color: #2c3e50;
   margin-top: 60px;
 }
-button{
-  padding-left: 10px;
-  padding-right: 10px;
-  margin: 5px;
-  background-color: aliceblue;
-  border: 1px solid black;
+.btn{
+  padding: 8px 20px;
+  margin: 10px;
+  background-color: rgba(71, 219, 133, 0.63);
+  border: 1px solid white;
+  border-radius: 5px;
 }
 </style>
